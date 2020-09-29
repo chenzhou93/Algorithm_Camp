@@ -50,7 +50,7 @@ vector<int> getAnswer(int n, vector<int> a) {
     for(int i=0; i<n; i++){
         arr.push_back(a[i]);
     }
-    myMergeSort(0, n-1, arr);
+    myMergeSort(0, n, arr);
     return arr;
 }
 
