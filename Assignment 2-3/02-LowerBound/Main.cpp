@@ -22,18 +22,16 @@ vector<int> getAnswer(int n, vector<int> a, int Q, vector<int> query) {
 
     for(int i=0; i<Q; ++i){
         int key = query[i];
-        int l=0, r=n, mid;
-        while(l < r){
+        int l=-1, r=n, mid;
+        while(l+1 < r){
             mid = (l+r) >> 1;
-            cout << "mid: " << mid << endl;
             if(a[mid] < key){
-                l = mid+1;
+                l = mid;
             }else{
                 r = mid;
             }
-            cout << l << " " << r << endl;
         }
-        int pos = mid;
+        int pos = r;
         if(pos >= n){
             ans.push_back(-1);
         }else{
